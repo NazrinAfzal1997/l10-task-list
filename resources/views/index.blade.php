@@ -1,6 +1,11 @@
-<h1>
+@extends('layouts.app')
+
+@section('title', 'The list of tasks')
+
+@section('content')
+{{-- <h1>
     The list of tasks
-</h1>
+</h1> --}}
 
 {{-- @isset($name)
     <div>The name is : {{ $name }}</div>
@@ -25,3 +30,5 @@
     @endforelse
         
 </div>
+
+@endsection
