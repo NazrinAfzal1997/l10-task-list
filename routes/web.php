@@ -43,7 +43,7 @@ Route::post('/tasks', function (Request $request) {
     $data = $request->validate([
         'title' => 'required|string|max:255',
         'description' => 'required|string',
-        'long_description' => 'nullable|string',
+        'long_description' => 'required|string',
     ]);
 
     $task = new Task;
@@ -52,7 +52,7 @@ Route::post('/tasks', function (Request $request) {
     $task->long_description = $data['long_description'];
     $task->save();
 
-    return redirect()->route('tasks.show', ['id' => $task->id]);
+    return redirect()->route('tasks.show', ['id' => $task->id])->with('success', 'Task created successfully');
 })->name('tasks.store');
 
 
