@@ -3,7 +3,7 @@
 @section('title', 'Add Task')
 
 @section('content')
-
+    {{-- {{ $errors }} --}}
     <form method="POST" action="{{ route('tasks.store') }}">
         @csrf
         <div>
@@ -19,8 +19,8 @@
         </div>
 
         <div>
-            <label for="loong_description">Long Description</label>
-            <textarea type="text" name="loong_description" id="loong_description" rows="10"></textarea>
+            <label for="long_description">Long Description</label>
+            <textarea type="text" name="long_description" id="long_description" rows="10"></textarea>
         </div>
 
         <div>
